@@ -1,0 +1,10 @@
+uno_tiene_veneno(violeta,azul).
+uno_tiene_veneno(rojo,amarillo).
+uno_tiene_veneno(azul,naranja).
+un_par_sin_veneno(violeta,amarillo).
+un_par_sin_veneno(rojo,naranja).
+un_par_sin_veneno(verde,azul).
+
+sin_veneno(rojo).
+sin_veneno(X):- (un_par_sin_veneno(X,Y);un_par_sin_veneno(Y,X)),con_veneno(Y).
+con_veneno(X):- (uno_tiene_veneno(X,Y);uno_tiene_veneno(Y,X)),sin_veneno(Y).
